@@ -1,0 +1,6 @@
+CREATE TABLE usuarios (id, nombre);
+INSERT INTO usuarios (id, nombre) VALUES (1, 'Juan');
+SELECT id, nombre FROM usuarios WHERE id = 1;
+UPDATE usuarios SET nombre = 'Pedro', edad = 25 WHERE id = 1;
+DELETE FROM usuarios WHERE id = 1;
+DROP TABLE usuarios;
