@@ -1,0 +1,15 @@
+# Analizador Sintáctico Predictivo (Python)
+
+Este proyecto implementa un **analizador sintáctico ascendente simplificado** en Python.  
+Lee una gramática desde un archivo, calcula los conjuntos **FIRST**, **FOLLOW** y **PREDICT**, y valida expresiones aritméticas simples con operadores `+`, `*` y paréntesis.
+---
+## Archivos del proyecto
+- `ejercicio.py` → Código principal del analizador.  
+- `gramatica.txt` → Contiene las reglas de la gramática.  
+- `prueba.txt` → Lista de expresiones que el programa valida.
+---
+## Ejecución
+1. Coloca todos los archivos en la misma carpeta.  
+2. Abre una terminal en esa carpeta.  
+3. Ejecuta el siguiente comando:
+python ejercicio.py
