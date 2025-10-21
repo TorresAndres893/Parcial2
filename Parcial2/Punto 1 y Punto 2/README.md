@@ -2,11 +2,9 @@
 
 ## Enunciado/objetivo
 
-El objetivo del Punto 1 es diseñar una gramática en notación BNF para un lenguaje de programación que soporte operaciones CRUD (Create, Read, Update, Delete) en una base de datos relacional. La gramática debe cubrir la creación de tablas, inserción de registros, consultas, actualizaciones y eliminaciones, con soporte para listas de campos, valores, condiciones lógicas y operadores relacionales.
+1. Diseñe una gramatico de un lenguaje de programacion que permita hacer las opceraciones CRUD en una base de datos.
 
-El Punto 2 consiste en implementar la gramática del Punto 1 usando ANTLR, generar el parser y realizar pruebas con sentencias válidas e inválidas para verificar el funcionamiento del analizador sintáctico.
-
-Esta solución implementa una gramática simple inspirada en SQL, adaptada para un lenguaje de programación general, y usa ANTLR para el parser.
+2. Implementacion la gramatica del punto 1 en BISON o ANTLR4 y realice pruebas de lenguaje.
 
 ## Requisitos
 
@@ -17,8 +15,8 @@ Esta solución implementa una gramática simple inspirada en SQL, adaptada para 
 
 - `Grama2.g4`: Gramática ANTLR que define las operaciones CRUD (Punto 1 y 2).
 - `antlr-4.13.2-complete.jar`: Biblioteca ANTLR para generar y ejecutar el parser.
-- `test.txt`: Archivo con sentencias CRUD válidas para pruebas.
-- `test_invalid.txt`: Archivo con una sentencia inválida para verificar errores.
+- `Prueba1.txt`: Archivo con sentencias CRUD válidas para pruebas.
+- `Prueba2.txt`: Archivo con una sentencia inválida para verificar errores.
 - `README.md`: Este archivo con instrucciones.
 
 ## Ejecución / comandos
@@ -27,7 +25,7 @@ Esta solución implementa una gramática simple inspirada en SQL, adaptada para 
    ```bash
    java -jar antlr-4.13.2-complete.jar Grama2.g4
    ```
-   - Esto crea archivos Java como `Grama2Parser.java` y `Grama2Lexer.java`.
+   - Se generaran los archivos Java `Grama2Parser.java` y `Grama2Lexer.java`.
 
 2. **Compilar los archivos generados**:
    ```bash
@@ -37,12 +35,12 @@ Esta solución implementa una gramática simple inspirada en SQL, adaptada para 
 
 3. **Probar sentencias válidas (Punto 2)**:
    ```bash
-   java -cp antlr-4.13.2-complete.jar:. org.antlr.v4.gui.TestRig Grama2 programa -gui < test.txt
+   java -cp antlr-4.13.2-complete.jar:. org.antlr.v4.gui.TestRig Grama2 programa -gui < Prueba1.txt
    ```
    - Muestra un árbol gráfico de análisis para las sentencias CRUD válidas.
    - Si no tienes entorno gráfico, usa:
      ```bash
-     java -cp antlr-4.13.2-complete.jar:. org.antlr.v4.gui.TestRig Grama2 programa -tree < test.txt
+     java -cp antlr-4.13.2-complete.jar:. org.antlr.v4.gui.TestRig Grama2 programa -tree < Prueba1.txt
      ```
    - Contenido de `test.txt` (ejemplos CRUD):
      ```
@@ -56,7 +54,7 @@ Esta solución implementa una gramática simple inspirada en SQL, adaptada para 
 
 4. **Probar sentencia inválida (Punto 2)**:
    ```bash
-   java -cp antlr-4.13.2-complete.jar:. org.antlr.v4.gui.TestRig Grama2 programa -tokens < test_invalid.txt
+   java -cp antlr-4.13.2-complete.jar:. org.antlr.v4.gui.TestRig Grama2 programa -tokens < Prueba2.txt
    ```
    - Muestra tokens y un error de sintaxis para `SELECT FROM usuarios;`.
    - Salida esperada:
@@ -80,10 +78,9 @@ Esta solución implementa una gramática simple inspirada en SQL, adaptada para 
   - La gramática es libre de recursividad izquierda en condiciones usando `condicionSimple`.
 
 - **Punto 2 (Implementación ANTLR)**:
-  - Gramática en formato ANTLR 4 (`Grama2.g4`), con tokens para palabras clave y símbolos.
+  - Gramática en formato ANTLR 4 (`Grama2.g4`).
   - Parser generado que produce árboles de análisis sintáctico.
-  - Pruebas cubren casos válidos (todas las CRUD) e inválidos (falta `listaCampos` en `SELECT`).
-  - Maneja espacios en blanco y errores de sintaxis con mensajes claros.
+  - Pruebas cubren casos válidos e inválidos.
 
 - **Ventajas**:
   - La gramática es extensible (fácil agregar más operadores o tipos de datos).
@@ -91,7 +88,9 @@ Esta solución implementa una gramática simple inspirada en SQL, adaptada para 
 
 ## Conclusiones
 
-La gramática diseñada en el Punto 1 cumple con los requisitos para un lenguaje básico de operaciones CRUD, permitiendo estructuras SQL-like simples pero robustas para bases de datos relacionales. El Punto 2 demuestra que ANTLR es una herramienta efectiva para implementar y probar gramáticas complejas, generando un parser que valida sintaxis de manera precisa y eficiente. Las pruebas confirman que el parser acepta sentencias válidas y rechaza inválidas, validando el diseño. En general, esta solución proporciona una base sólida para un lenguaje de programación enfocado en bases de datos, con potencial para extensiones como joins o transacciones.
+La gramática diseñada en el Punto 1 cumple con los requisitos para un lenguaje básico de operaciones CRUD para bases de datos relacionales.
+El Punto 2 el uso de ANTLR como herramienta para implementar y probar gramáticas complejas, generando un parser que valida sintaxis de manera precisa y eficiente. 
+Las pruebas se realizan con el fin que el parser acepta sentencias válidas y rechaza inválidas.
 
 ## Notas
 
