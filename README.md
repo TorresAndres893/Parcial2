@@ -1,8 +1,5 @@
 # Parcial2
 
-Aquí tienes un **README general y formal** para esa actividad de “Lenguajes de Programación — Parcial 2 (2025_2 B)”. Está redactado de forma profesional, como se espera en un proyecto académico o de laboratorio de compiladores.
-
----
 
 # 📘 Parcial 2 — Lenguajes de Programación (2025_2 B)
 
